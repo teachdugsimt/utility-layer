@@ -1,9 +1,9 @@
-import * as AWS from 'aws-sdk'
 import cryptoRandomString from 'crypto-random-string';
 import * as crypto from 'crypto';
 import Hashids from 'hashids';
 import * as jwt from 'jsonwebtoken';
 
+import AWS from 'aws-sdk'
 const kms = new AWS.KMS()
 
 export default class Security {

@@ -109,11 +109,10 @@ class SecretsManager {
 }
 exports.default = SecretsManager;
 // const main = async () => {
-//   let secret_key = "CGLDevDbInstanceSecretA9F22-sti3vcA5nj2o"
+//   let secret_key = "CGLDevDbInstance"
 //   const instance = new SecretsManager(null)
 //   let tmp = await instance.getSecretString(secret_key)
 //   console.log("Tmp :: ", tmp)
 // }
 // main()
-// module.exports = SecretsManager;
 //# sourceMappingURL=secret-manager.js.map

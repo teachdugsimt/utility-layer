@@ -22,12 +22,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const AWS = __importStar(require("aws-sdk"));
 const crypto_random_string_1 = __importDefault(require("crypto-random-string"));
 const crypto = __importStar(require("crypto"));
 const hashids_1 = __importDefault(require("hashids"));
 const jwt = __importStar(require("jsonwebtoken"));
-const kms = new AWS.KMS();
+const aws_sdk_1 = __importDefault(require("aws-sdk"));
+const kms = new aws_sdk_1.default.KMS();
 class Security {
     constructor() {
         this.salt = 'secretkeyforcargolinkproject';
