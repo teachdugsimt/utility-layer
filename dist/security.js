@@ -1,33 +1,14 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const AWS = __importStar(require("aws-sdk"));
 const crypto_random_string_1 = __importDefault(require("crypto-random-string"));
-const crypto = __importStar(require("crypto"));
+const crypto_1 = __importDefault(require("crypto"));
 const hashids_1 = __importDefault(require("hashids"));
-const jwt = __importStar(require("jsonwebtoken"));
-const kms = new AWS.KMS();
+const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const aws_sdk_1 = __importDefault(require("aws-sdk"));
+const kms = new aws_sdk_1.default.KMS();
 class Security {
     constructor() {
         this.salt = 'secretkeyforcargolinkproject';
@@ -65,7 +46,7 @@ class Security {
     }
     // [MOVE] to utillity layer
     generateOtpSecretCode(source) {
-        return crypto.createHmac('sha256', source).digest('hex');
+        return crypto_1.default.createHmac('sha256', source).digest('hex');
     }
     // [MOVE] to utillity layer
     generatePassword(length = 10) {
@@ -83,11 +64,11 @@ class Security {
     }
     // [MOVE] to utillity layer
     getUserIdByToken(token) {
-        const data = jwt.decode(token);
+        const data = jsonwebtoken_1.default.decode(token);
         return data['userId'];
     }
     generateJwtToken(data) {
-        return jwt.sign(data, this.salt);
+        return jsonwebtoken_1.default.sign(data, this.salt);
     }
 }
 exports.default = Security;
