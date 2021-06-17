@@ -1,4 +1,4 @@
-import cryptoRandomString from 'crypto-random-string';
+import cryptoRandomString from './crypto-ramdom-string';
 import crypto from 'crypto';
 import Hashids from 'hashids';
 import jwt from 'jsonwebtoken';
@@ -79,3 +79,11 @@ export default class Security {
     return jwt.sign(data, this.salt);
   }
 }
+
+
+// const main = async () => {
+//   const repo = new Security()
+//   const res = repo.generateJwtToken({ user_id: 'testuser' })
+//   console.log("result : ", res)
+// }
+// main()
