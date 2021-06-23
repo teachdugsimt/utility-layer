@@ -65,7 +65,7 @@ class Security {
     // [MOVE] to utillity layer
     getUserIdByToken(token) {
         const data = jsonwebtoken_1.default.decode(token);
-        return data['userId'];
+        return data['custom:userId'];
     }
     generateJwtToken(data) {
         return jsonwebtoken_1.default.sign(data, this.salt);
