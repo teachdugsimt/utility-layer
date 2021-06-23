@@ -72,7 +72,7 @@ export default class Security {
   // [MOVE] to utillity layer
   getUserIdByToken(token: string): any {
     const data: any = jwt.decode(token);
-    return data['userId']
+    return data['custom:userId']
   }
 
   generateJwtToken(data: any): string {
