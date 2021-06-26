@@ -80,7 +80,12 @@ export default class Security {
   }
 
   matchEncryptId(str: string): number | null {
-    return str.match(/^[0-9a-zA-Z]{8,15}$/) ? this.decodeUserId(str) : null
+    return str && str.toString().match(/^[0-9A-Z]{8,15}$/) ? this.decodeUserId(str) : null
   }
-  
+
 }
+// const main = () => {
+//   const repo = new Security()
+//   console.log("Res : ",repo.matchEncryptId("RADR50KX"))
+// }
+// main()
