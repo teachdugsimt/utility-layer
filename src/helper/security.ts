@@ -78,12 +78,9 @@ export default class Security {
   generateJwtToken(data: any): string {
     return jwt.sign(data, this.salt);
   }
+
+  matchEncryptId(str: string): number | null {
+    return str.match(/^[0-9a-zA-Z]{8,15}$/) ? this.decodeUserId(str) : null
+  }
+  
 }
-
-
-// const main = async () => {
-//   const repo = new Security()
-//   const res = repo.generateJwtToken({ user_id: 'testuser' })
-//   console.log("result : ", res)
-// }
-// main()
