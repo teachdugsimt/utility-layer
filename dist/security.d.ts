@@ -13,4 +13,5 @@ export default class Security {
     decodeUserId(cipherText: string): any;
     getUserIdByToken(token: string): any;
     generateJwtToken(data: any): string;
+    matchEncryptId(str: string): number | null;
 }

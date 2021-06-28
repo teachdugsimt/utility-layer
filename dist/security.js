@@ -70,12 +70,14 @@ class Security {
     generateJwtToken(data) {
         return jsonwebtoken_1.default.sign(data, this.salt);
     }
+    matchEncryptId(str) {
+        return str && str.toString().match(/^[0-9A-Z]{8,15}$/) ? this.decodeUserId(str) : null;
+    }
 }
 exports.default = Security;
-// const main = async () => {
+// const main = () => {
 //   const repo = new Security()
-//   const res = repo.generateJwtToken({ user_id: 'testuser' })
-//   console.log("result : ", res)
+//   console.log("Res : ",repo.matchEncryptId("RADR50KX"))
 // }
 // main()
 //# sourceMappingURL=security.js.map
