@@ -83,6 +83,15 @@ export default class Security {
     return str && str.toString().match(/^[0-9A-Z]{8,15}$/) ? this.decodeUserId(str) : null
   }
 
+  decodeToken(token: string): any {
+    return jwt.decode(token);
+  }
+
+  getRoleNameByToken(token: string): string | null {
+    const data = this.decodeToken(token);
+    return data['roles'] ?? null;
+  }
+
 }
 // const main = () => {
 //   const repo = new Security()

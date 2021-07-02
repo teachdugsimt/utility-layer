@@ -73,6 +73,14 @@ class Security {
     matchEncryptId(str) {
         return str && str.toString().match(/^[0-9A-Z]{8,15}$/) ? this.decodeUserId(str) : null;
     }
+    decodeToken(token) {
+        return jsonwebtoken_1.default.decode(token);
+    }
+    getRoleNameByToken(token) {
+        var _a;
+        const data = this.decodeToken(token);
+        return (_a = data['roles']) !== null && _a !== void 0 ? _a : null;
+    }
 }
 exports.default = Security;
 // const main = () => {

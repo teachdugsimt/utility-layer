@@ -14,4 +14,6 @@ export default class Security {
     getUserIdByToken(token: string): any;
     generateJwtToken(data: any): string;
     matchEncryptId(str: string): number | null;
+    decodeToken(token: string): any;
+    getRoleNameByToken(token: string): string | null;
 }
