@@ -85,7 +85,7 @@ class Security {
 exports.default = Security;
 // const main = () => {
 //   const repo = new Security()
-//   console.log("Res : ",repo.matchEncryptId("RADR50KX"))
+//   console.log("Res : ", repo.encodeUserId(528))
 // }
 // main()
 //# sourceMappingURL=security.js.map
