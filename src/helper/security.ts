@@ -95,6 +95,6 @@ export default class Security {
 }
 // const main = () => {
 //   const repo = new Security()
-//   console.log("Res : ", repo.encodeUserId(528))
+//   console.log("Res : ", repo.encodeUserId(582))
 // }
 // main()
