@@ -1,5 +1,4 @@
 import { provinceListEn, provinceListTh } from 'constants/provinces';
-import jwt from 'jsonwebtoken';
 
 export default class Address {
   findProvince = (address?: string | null) => {
