@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const provinces_1 = require("constants/provinces");
+const provinces_1 = require("../constants/provinces");
 class Address {
     constructor() {
         this.findProvince = (address) => {

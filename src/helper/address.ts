@@ -1,4 +1,4 @@
-import { provinceListEn, provinceListTh } from 'constants/provinces';
+import { provinceListEn, provinceListTh } from '../constants/provinces';
 
 export default class Address {
   findProvince = (address?: string | null) => {
